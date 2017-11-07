@@ -42,10 +42,10 @@ new Vue({
   },
 
   
-         mounted: function () {
+  mounted: function () {
 
-             this.getVuenote(this.pagination.current_page);
-         }, 
+    this.getVuenote(this.pagination.current_page);
+  }, 
   methods: {
     getVuenote: function(page) {
       this.$http.get('http://localhost/laravelvuenote/public/vuenotes?page='+page).then((response) => {
@@ -91,7 +91,7 @@ new Vue({
     changePage: function(page) {
       this.pagination.current_page = page;
       this.getVuenote(page);
-      toastr.success( '切換頁面'+page, '切換中',{timeOut: 5000});
+      toastr.success( '切換頁面'+page, '切換中',{timeOut: 3000,positionClass: "toast-top-left",progressBar: true});
     }
   }
 });

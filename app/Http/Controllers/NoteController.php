@@ -13,7 +13,7 @@ class NoteController extends Controller
 {
    public function api()
     {    
-      return view('/api');       
+        return view('notes.api');   
     }
     /**
      * Display a listing of the resource.
@@ -113,5 +113,10 @@ class NoteController extends Controller
     {
         Note::find($id)->delete();
         return response()->json(['done']);
+    }
+    public function test()
+    {
+        return view('notes.show');   
+
     }
 }

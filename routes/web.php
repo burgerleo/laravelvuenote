@@ -17,3 +17,6 @@
 Route::get('/', 'NoteController@api');
 Route::get('/api', 'NoteController@index');
 Route::resource('vuenotes','NoteController');
+
+Route::get('/show', 'NoteController@test');
+
